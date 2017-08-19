@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результати</title>
+</head>
+<body>
+{% block main %}
+{% if singer_list %}
+    <ul>
+    <div>
+        <h2>Исполнители:</h2>
+    </div>
+
+     {% for song in singer_list %}
+        <li>{{ song.singer_first_name }} {{ song.singer_last_name }}  <a href="{% url 'album_detail' song.id %}"> {{ song.album_name }} </a></li>
+
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>Немає записів реєстрацї.</p>
+{% endif %}
+{% endblock %}
+
+</body>
+</html>

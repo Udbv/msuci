@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Жанри</title>
+</head>
+<body>
+{% block main %}
+    <form id="patients">
+{% if genre_list %}
+    <ul>
+    <div>
+        <h2>Жанри:</h2>
+    </div>
+
+     {% for genre in genre_list %}
+        <li>{{ genre.genre_name }} </li>
+         {% for album in genre_list %}
+
+             {% if album.genre_name == genre.genre_name %}
+             <h3>{{ album.genre_album }} </h3>
+             {% endif %}
+             {% endfor %}
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>Немає записів реєстрацї.</p>
+{% endif %}
+</form>
+{% endblock %}
+
+
+</body>
+</html>

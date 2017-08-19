@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Album</title>
+</head>
+<body>
+
+{% block main %}
+{% if album_list %}
+    <ul>
+    <div>
+        <h1>Карточка альбома:</h1>
+    </div>
+        <h2>Исполнители</h2>
+     {% for album in album_list %}
+        <li>{{ album.album_singer}}   </li>
+
+    {% endfor %}
+    <h2>Треки</h2>
+    {% for album in album_list %}
+        <li style="align-content: center"> {{ album.album_track }}</li>
+    {% endfor %}
+    <h2>Жанры</h2>
+    {% for album in album_list %}
+        <li>{{ album.album_genre }} </li>
+    {% endfor %}
+    {% else %}
+    <p>Немає записів реєстрацї.</p>
+{% endif %}
+    </ul>
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результати</title>
+</head>
+<body>
+{% block main %}
+<p>ID: {{ singer.id}}</p>
+<p>First Name:{{  singer.singer_first_name}}</p>
+<p>Last Name:{{ singer.singer_last_name}}</p>
+ <p>Album:{{ singer.singer_album_name}}</p>
+
+
+
+{% endblock %}
+
+</body>
+</html>
